@@ -32,7 +32,11 @@ if __name__ == "__main__":
     )
     options = parser.parse_args()
     print("strava_sync =======")
-    print(options)
+    print(options.client_id)
+    print(options.client_secret)
+    print(options.refresh_token)
+    print("strava_sync ======= end")
+
     run_strava_sync(
         options.client_id,
         options.client_secret,
