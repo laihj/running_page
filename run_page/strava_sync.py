@@ -20,6 +20,7 @@ def run_strava_sync(client_id, client_secret, refresh_token, only_run=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    
     parser.add_argument("client_id", help="strava client id")
     parser.add_argument("client_secret", help="strava client secret")
     parser.add_argument("refresh_token", help="strava refresh token")
@@ -30,6 +31,8 @@ if __name__ == "__main__":
         help="if is only for running",
     )
     options = parser.parse_args()
+    print("strava_sync =======")
+    print(options)
     run_strava_sync(
         options.client_id,
         options.client_secret,
