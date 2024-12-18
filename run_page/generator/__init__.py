@@ -28,10 +28,6 @@ class Generator:
         self.only_run = False
 
     def set_strava_config(self, client_id, client_secret, refresh_token):
-        print(f"Setting Strava config:")
-        print(f"client_id: {client_id}")
-        print(f"client_secret: {client_secret}")
-        print(f"refresh_token: {refresh_token}")
         self.client_id = client_id
         self.client_secret = client_secret
         self.refresh_token = refresh_token
@@ -43,11 +39,13 @@ class Generator:
             refresh_token=self.refresh_token,
         )
         # Update the authdata object
+        print("Access begin")
+        print(response)
         self.access_token = response["access_token"]
         self.refresh_token = response["refresh_token"]
 
         self.client.access_token = response["access_token"]
-        print("Access ok")
+        
 
     def sync(self, force):
         self.check_access()
